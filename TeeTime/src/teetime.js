@@ -1,3 +1,9 @@
+var injectionActive = false;
+var checkCount = 0;
+var activateButton = document.querySelector("#bot-content a");
+
+document.querySelector("#time_slots").addEventListener('DOMSubtreeModified', resetActivateButton);
+
 getAvailableSlotsByTime = function(date, time, slotID){
 	
 	$(".banner_right_cgc").show();
@@ -17,16 +23,10 @@ getAvailableSlotsByTime = function(date, time, slotID){
         },
         success: function (resp) {
 
-            window.postMessage({
-                type:"getAvailableSlotsByTime",
-                resp:resp
-            },"*");
+            ajaxResponse("getAvailableSlotsByTime", resp);
 
             if(resp.error == 0){
-                
-                //$(".banner_right_cgc").hide();
-  
-//                $('#upcomingSlotPrice').html(resp.slots.daysToShowHtml);
+
                 var html ='<div class="row margin-btm">'+
                                     '<div class="col-md-4 col-xs-12">'+
                                         '<input type="Button" id="startBtn" name="startBtn" style="width:201px;" onclick=startBookingSession('+resp.slots.slotID+',\"'+date+'\",\"'+time+'\") class="form-control btn btn-primary" value="Start booking session">'+
@@ -111,4 +111,70 @@ getAvailableSlotsByTime = function(date, time, slotID){
             unblock_screen();
         }
     });
+}
+
+function resetActivateButton(){
+    if(!document.querySelector("#time_slots li input")) {
+        injectionActive = false;
+        activateButton.innerHTML = "Activate Hack";
+    }
+}
+
+function activateBot(e) {
+	if(!injectionActive) {
+		injectionActive = true;
+
+		insertCheckboxes();
+		
+		activateButton.innerHTML = "Start Bot";
+	}
+	else {
+
+        if(!checkCount)
+            return;
+        /*
+
+        send slot requests
+
+        var item = document.querySelector('#time_slots a'|);
+        item.onclick();
+
+        */
+	}
+}
+
+function checkboxChange() {
+    if(this.checked)
+        checkCount++;
+    else
+        checkCount--;
+}
+
+function insertCheckboxes() {
+    var items = document.querySelectorAll('#time_slots li');
+    checkCount = 0;
+
+	for(var i=0;i<items.length;i++) {
+		var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.onchange = checkboxChange;
+		items[i].appendChild(checkbox);
+	}
+}
+
+function ajaxResponse(requestFunction, response) {
+    switch(requestFunction) {
+        case "getAvailableSlotsByTime":
+            if(response.error == 0) {
+                // check for status
+                // if status is 0
+                //  	if not already blocked
+                // 			request book now button
+            }
+            else {
+                click();
+            }
+
+            break;
+    }
 }

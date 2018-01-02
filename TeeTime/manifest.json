@@ -6,10 +6,10 @@
 "content_scripts": [
     {
       "matches": ["http://cgc.golflan.com/member_booking.php"],
-      "js": ["book.js"]
+      "js": ["src/inject.js"]
     }
   ],
   "web_accessible_resources": [
-  	"extension.html", "inject.js"
+  	"extension.html", "src/teetime.js"
   ]
 }
