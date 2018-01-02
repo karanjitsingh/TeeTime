@@ -10,6 +10,6 @@
     }
   ],
   "web_accessible_resources": [
-  	"extension.html"
+  	"extension.html", "inject.js"
   ]
 }
