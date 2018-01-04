@@ -1,7 +1,12 @@
-var injection = document.createElement('script');
-injection.setAttribute('type', 'text/javascript');
-injection.setAttribute('src', chrome.extension.getURL('./src/teetime.js'));
-document.body.appendChild(injection);
+function injectScript(src) {
+	var injection = document.createElement('script');
+	injection.setAttribute('type', 'text/javascript');
+	injection.setAttribute('src', chrome.extension.getURL(src));
+	document.body.appendChild(injection);
+}
+
+injectScript("./src/teetime.js");
+injectScript("./src/modscript.js");
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {

@@ -10,6 +10,6 @@
     }
   ],
   "web_accessible_resources": [
-  	"extension.html", "src/teetime.js"
+  	"extension.html", "src/teetime.js", "src/modscript.js"
   ]
 }
