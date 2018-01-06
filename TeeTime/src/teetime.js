@@ -25,14 +25,22 @@ function activateBot(e) {
 		
 		activateButton.innerHTML = "Start Bot";
 	}
-	else {
+	else if(injectionStatus == "active") {
 
+        log("Starting bot, clicking stop bot will cause the page to refresh.")
+        document.querySelector("#console-log").style.display = "block";
+
+        activateButton.innerHTML = "Stop Bot"
         injectionStatus = "running";
 
         var checkedBoxed = document.querySelectorAll("#time_slots input:checked");
 
         if(!checkedBoxed.length)
             return;
+
+
+        log("");
+        log("Looking for following timeslots:")
 
         for(var i=0; i<checkedBoxed.length; i++) {
             console.log(checkedBoxed[i]);
@@ -50,10 +58,22 @@ function activateBot(e) {
             selectedTimeSlotsLength++;
             
 
+            log("Date: " + timeslot.booking_date + "&nbsp&nbsp" + "Time: " + timeslot.booking_time + "&nbsp&nbsp" + "Slot ID: " + timeslot.slotID);
+
             modGetAvailableSlotsByTime(timeslot);
         }
 
-	}
+        log("");
+        log("Requesting...")
+        
+
+    }
+    
+    else if(injectionStatus == "running") {
+        injectionStatus = "stopped";
+
+        location.reload();
+    }
 }
 
 function insertCheckboxes() {
@@ -70,24 +90,36 @@ function insertCheckboxes() {
 
 function ajaxResponse(requestFunction, response, slotID) {
     
-    console.log(response);
-
     switch(requestFunction) {
         case "getAvailableSlotsByTime":
             if(response.error == 0 && injectionStatus == "running") {
+
+                log("");
+                log("Found available slot: ");
+                var timeslot = selectedTimeSlots[slotID]
+                log("Date: " + timeslot.booking_date + "&nbsp&nbsp" + "Time: " + timeslot.booking_time + "&nbsp&nbsp" + "Slot ID: " + timeslot.slotID);
+                
+
                 if(response.slots.Status != 0) {
-                    delete selectedTimeSlots[response.slots.slotID];
+                    delete selectedTimeSlots[slotID];
                     selectedTimeSlotsLength--;
                 }
                 else {
                     injectionStatus = "booking"
                     modStartBookingSession(response);
+
+                    document.querySelector("#bot-content").style.display = "none";
+                    document.querySelector("#console-log").style.display = "none";
                 }
             }
-            else {
-                setTimeout(function() {modGetAvailableSlotsByTime(selectedTimeSlots[slotID])}, 10);
+            else if (injectionStatus == "running"){
+                setTimeout(function() {modGetAvailableSlotsByTime(selectedTimeSlots[slotID])}, 1000);
             }
 
             break;
     }
+}
+
+function log(msg) {
+    document.querySelector("#console-log").innerHTML += msg + "<br />";
 }
