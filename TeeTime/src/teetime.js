@@ -2,7 +2,8 @@ var injectionStatus = "inactive";
 var activateButton = document.querySelector("#bot-content a");
 var selectedTimeSlots = new Object();
 var selectedTimeSlotsLength = 0;
-var timeslot_re = /.*,([0-9]+)\)\;/;
+// var timeslot_re = /.*,([0-9]+)\)\;/;
+var timeslot_re = /"(.*)".*"(.*)".*,([0-9]*)\)/
 
 document.querySelector("#time_slots").addEventListener('DOMSubtreeModified', resetActivateButton);
 
@@ -36,9 +37,20 @@ function activateBot(e) {
         for(var i=0; i<checkedBoxed.length; i++) {
             console.log(checkedBoxed[i]);
             var link = checkedBoxed[i].parentElement.querySelector("a");
-            selectedTimeSlots[String(link.onclick).match(timeslot_re)[1]] = link.onclick;
+
+            var match = String(link.onclick).match(timeslot_re);
+
+            var timeslot = {
+                slotID: parseInt(match[3]),
+                booking_date: match[1],
+                booking_time: match[2]
+            }
+
+            selectedTimeSlots[timeslot.slotID] = timeslot;
             selectedTimeSlotsLength++;
-            link.onclick();
+            
+
+            modGetAvailableSlotsByTime(timeslot);
         }
 
 	}
@@ -62,7 +74,7 @@ function ajaxResponse(requestFunction, response, slotID) {
 
     switch(requestFunction) {
         case "getAvailableSlotsByTime":
-            if(response.error == 0) {
+            if(response.error == 0 && injectionStatus == "running") {
                 if(response.slots.Status != 0) {
                     delete selectedTimeSlots[response.slots.slotID];
                     selectedTimeSlotsLength--;
@@ -73,7 +85,7 @@ function ajaxResponse(requestFunction, response, slotID) {
                 }
             }
             else {
-                selectedTimeSlots[slotID]();
+                setTimeout(function() {modGetAvailableSlotsByTime(selectedTimeSlots[slotID])}, 10);
             }
 
             break;

@@ -18,7 +18,11 @@ unblock_screen = (function() {
     };
 })();
 
-getAvailableSlotsByTime = function(booking_date, booking_time, slotID){
+var modGetAvailableSlotsByTime = function(timeslot){
+
+    var booking_date = timeslot.booking_date;
+    var booking_time = timeslot.booking_time;
+    var slotID = timeslot.slotID;
 
     var data=  {slot_date : booking_date, time : booking_time, slot_ID : slotID};
 	$(".banner_right_cgc").show();
@@ -32,10 +36,15 @@ getAvailableSlotsByTime = function(booking_date, booking_time, slotID){
         data: {slot_date : booking_date, time : booking_time, slot_ID : slotID},
         dataType: "json",
         async :false,
+        context: timeslot,
         beforeSend: function(msg){
             block_screen();
         },
         success: function (resp) {
+
+            var booking_date = this.booking_date;
+            var booking_time = this.booking_time;
+            var slotID = this.slotID;
 
             if(injectionStatus == "running") {
                 resp.booking_date = booking_date;
@@ -130,11 +139,9 @@ getAvailableSlotsByTime = function(booking_date, booking_time, slotID){
             unblock_screen();
         }
     });
-
-    booking_time = slotID;
 }
 
-modStartBookingSession = function(resp){
+var modStartBookingSession = function(resp){
     var slotID = parseInt(resp.slots.slotID);
     var date = resp.booking_date;
     var time = resp.booking_time;
