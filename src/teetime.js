@@ -1,72 +1,53 @@
 var injectionStatus = "inactive";
 var activateButton = document.querySelector("#bot-content a");
-var selectedTimeSlots = new Object();
-var selectedTimeSlotsLength = 0;
-// var timeslot_re = /.*,([0-9]+)\)\;/;
-var timeslot_re = /"(.*)".*"(.*)".*,([0-9]*)\)/
-
-document.querySelector("#time_slots").addEventListener('DOMSubtreeModified', resetActivateButton);
-
-function resetActivateButton(){
-    if(!document.querySelector("#time_slots li input")) {
-        injectionActive = false;
-        activateButton.innerHTML = "Activate Hack";
-        selectedTimeSlots = new Object();
-        selectedTimeSlotsLength = 0;
-        injectionStatus = "inactive"
-    }
-}
+var selectedTimeSlots = [];
+var selectedTimes = [];
+var dateSlot = new URLSearchParams(document.location.search).get("stdt");
+var timeTerm = new URLSearchParams(document.location.search).get("timeterm");
 
 function activateBot(e) {
 	if(injectionStatus == "inactive") {
 		injectionStatus = "active";
+
+        document.querySelectorAll(".booking-check-list").forEach((elem) => {
+            elem.className = "booking-check-list";
+        });
 
 		insertCheckboxes();
 		
 		activateButton.innerHTML = "Start Bot";
 	}
 	else if(injectionStatus == "active") {
+        var checkedBox = document.querySelectorAll(".booking-check-list input:checked");
+
+        if(!checkedBox.length)
+            return;
 
         log("Starting bot, clicking stop bot will cause the page to refresh.")
         document.querySelector("#console-log").style.display = "block";
+    
 
         activateButton.innerHTML = "Stop Bot"
         injectionStatus = "running";
 
-        var checkedBoxed = document.querySelectorAll("#time_slots input:checked");
-
-        if(!checkedBoxed.length)
-            return;
-
-
         log("");
         log("Looking for following timeslots:")
 
-        for(var i=0; i<checkedBoxed.length; i++) {
-            console.log(checkedBoxed[i]);
-            var link = checkedBoxed[i].parentElement.querySelector("a");
-
-            var match = String(link.onclick).match(timeslot_re);
-
-            var timeslot = {
-                slotID: parseInt(match[3]),
-                booking_date: match[1],
-                booking_time: match[2]
-            }
-
-            selectedTimeSlots[timeslot.slotID] = timeslot;
-            selectedTimeSlotsLength++;
+        // Get slot ids
+        for(var i=0; i<checkedBox.length; i++) {
+            console.log(checkedBox[i]);
             
+            var slotId = parseInt(checkedBox[i].parentElement.parentElement.getAttribute("rel"));
+            var time = checkedBox[i].parentElement.querySelector(".date").innerText;
 
-            log("Date: " + timeslot.booking_date + "&nbsp&nbsp" + "Time: " + timeslot.booking_time + "&nbsp&nbsp" + "Slot ID: " + timeslot.slotID);
+            selectedTimeSlots.push(slotId);
+            selectedTimes.push(time);
 
-            modGetAvailableSlotsByTime(timeslot);
+            log("Time: " + time + "&nbsp&nbsp" + "Slot ID: " + slotId);
+            tryBookSlot(slotId);
+            
+            // modGetAvailableSlotsByTime(timeslot);
         }
-
-        log("");
-        log("Requesting...")
-        
-
     }
     
     else if(injectionStatus == "running") {
@@ -77,49 +58,80 @@ function activateBot(e) {
 }
 
 function insertCheckboxes() {
-    var items = document.querySelectorAll('#time_slots li');
-    var links = document.querySelectorAll('#time_slots a');
+    var items = document.querySelectorAll('.booking-check-list li');
     checkCount = 0;
 
 	for(var i=0;i<items.length;i++) {
-		var checkbox = document.createElement('input');
+        var checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-		items[i].appendChild(checkbox);
+        items[i].querySelector("label").appendChild(checkbox);
+        $(items[i]).unbind();
 	}
-}
-
-function ajaxResponse(requestFunction, response, slotID) {
-    
-    switch(requestFunction) {
-        case "getAvailableSlotsByTime":
-            if(response.error == 0 && injectionStatus == "running") {
-
-                log("");
-                log("Found available slot: ");
-                var timeslot = selectedTimeSlots[slotID]
-                log("Date: " + timeslot.booking_date + "&nbsp&nbsp" + "Time: " + timeslot.booking_time + "&nbsp&nbsp" + "Slot ID: " + timeslot.slotID);
-                
-
-                if(response.slots.Status != 0) {
-                    delete selectedTimeSlots[slotID];
-                    selectedTimeSlotsLength--;
-                }
-                else {
-                    injectionStatus = "booking"
-                    modStartBookingSession(response);
-
-                    document.querySelector("#bot-content").style.display = "none";
-                    document.querySelector("#console-log").style.display = "none";
-                }
-            }
-            else if (injectionStatus == "running"){
-                setTimeout(function() {modGetAvailableSlotsByTime(selectedTimeSlots[slotID])}, 1000);
-            }
-
-            break;
-    }
 }
 
 function log(msg) {
     document.querySelector("#console-log").innerHTML += msg + "<br />";
 }
+
+function tryBookSlot(timeslot) {
+    if(!bookingComplete) {
+        modBookingSessionStart(timeslot);
+    }
+}
+
+var bookingComplete = false;
+
+function bookRequestSuccess(timeslot) {
+    if(!bookingComplete) {
+        bookingComplete = true;
+        log("");
+
+        var i = selectedTimeSlots.indexOf(timeslot);
+
+        log("Request success for time: " + selectedTimes[i] + " with slot ID: " + timeslot + ".");
+
+        setTimeout(() => {showBookingForm(timeslot) }, 500);
+
+        return true;
+    }
+
+    return false;
+}
+
+function showBookingForm(timeslot) {
+    document.querySelector("#console-log").style.display = "none";
+
+    var counterId = new Date();
+
+    // update booking form with slot id, date and counterid
+
+    
+    var bookingDiv = document.querySelector('.mod-booking-div');
+
+    bookingDiv.parentElement.removeChild(bookingDiv);
+    
+    bookingDiv.querySelector("form").setAttribute("action", "http://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=" + timeTerm + "&stdt=" + dateSlot + "&action=FinalBooking");
+    
+    bookingDiv.querySelector("#SlotID").setAttribute("value", timeslot);
+    bookingDiv.querySelector("#CounterID").setAttribute("value", counterId);
+
+    bookingDiv.querySelectorAll("select").forEach((elem) => {
+        $(elem).select2();
+    })
+    
+    var bookingArea = document.querySelector(".booking-row").children[1];
+    
+    while(bookingArea.childElementCount) {
+        bookingArea.removeChild(bookingArea.firstElementChild);
+    }
+    
+    bookingArea.appendChild(bookingDiv);
+    bookingDiv.style.display = "block";
+
+    // continue website's code
+    $(".BookingStep").hide();
+    $("#DivAlertMessage").hide();
+    $("#DivCreateBooking").show();
+    BookingCounterStart();
+}
+

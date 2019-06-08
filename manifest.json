@@ -5,11 +5,11 @@
 "manifest_version":2,
 "content_scripts": [
     {
-      "matches": ["http://cgc.golflan.com/member_booking.php"],
+      "matches": ["http://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking*"],
       "js": ["src/inject.js"]
     }
   ],
   "web_accessible_resources": [
-  	"extension.html", "src/teetime.js", "src/modscript.js"
+  	"src/extension.html", "src/teetime.js", "src/modscript.js", "src/booking.html"
   ]
 }

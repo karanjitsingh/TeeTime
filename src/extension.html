@@ -5,7 +5,7 @@
     height: 100%;
     width: 100%;
     font-size: 22px;
-    padding:16px;
+    padding:7px;
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
@@ -39,13 +39,13 @@
     animation-name: transitionUp;
 }
 
-#bot-content:hover {
+#bot-content.enabled:hover {
     box-shadow: 0px 2px 10px rgba(0,0,0,0.4);
     background: #4267B6;
     
 }
 
-#bot-content:hover a {
+#bot-content.enabled:hover a {
     color: white;
 }
 
@@ -75,9 +75,10 @@
 </style>
 
 <div id="bot-content">
-    <a>Activate Hack</a>
+    <a>Loading</a>
 </div>
 
-<div id="console-log">
+<div id="console-log" ></div>
 
+</div>
 </div>
