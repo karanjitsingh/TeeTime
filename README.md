@@ -1,6 +1,6 @@
 # TeeTime
 
-Chrome extension for booking time slots on http://cgc.golflan.com for my dad and his golf buddies.
+Chrome extension for booking time slots on http://booking.chandigarhgolfclub.in/ for my dad and his golf buddies.
 Morning slots open at 7 pm when everybody is frantically clicking to book their slots, this is when this extension comes handy.
 
 ### Adding chrome extension:
