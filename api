@@ -1,0 +1,19 @@
+https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-29&action=FinalBooking&SlotID=204037&CounterID=1640601560994&UserID%5B2%5D=731c83db8d2ff01bdc000083fd3c3740&UserID%5B3%5D=8dc5983b8c4ef1d8fcd5f325f9a65511&UserID%5B4%5D=
+
+
+working::
+https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&action=CheckAndFreezeSlot&SlotID=203983 
+
+https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-28&action=FinalBooking
+&SlotID=203983&CounterID=1640602364725&UserID%5B2%5D=731c83db8d2ff01bdc000083fd3c3740&UserID%5B3%5D=8dc5983b8c4ef1d8fcd5f325f9a65511&UserID%5B4%5D=
+
+
+https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-30&action=FinalBooking&SlotID=204091&CounterID=1640601560994&UserID%5B2%5D=731c83db8d2ff01bdc000083fd3c3740&UserID%5B3%5D=8dc5983b8c4ef1d8fcd5f325f9a65511&UserID%5B4%5D=
+
+
+204091
+
+var start=204037; for(var slot=start; slot<start+50; slot++)$.get({url:"https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&action=CheckAndFreezeSlot&SlotID="+slot+"&n="+Math.random()}).done(function(r) {console.log(r)})
+
+
+

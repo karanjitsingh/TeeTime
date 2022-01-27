@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://booking.chandigarhgolfclub.in/templates/front/default/custom/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://booking.chandigarhgolfclub.in/templates/front/default/custom/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://booking.chandigarhgolfclub.in/templates/front/default/custom/favicon/manifest.json">
+<meta property="og:image" content="https://booking.chandigarhgolfclub.in/templates/front/default/custom/images/logo.png" />
+<meta property="og:url" content="/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-28" />
+<meta property="og:title" content="Chandigarh Golf Club" />
+<meta property="og:type" content="website" />
+
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<link rel="shortcut icon" href="https://booking.chandigarhgolfclub.in/favicon.ico" >
+
+<meta name="author" content="Chandigarh Golf Club">
+<meta name="expires" content="never"> 
+<meta name="rating" content="general"> 
+<meta name="copyright" content="Chandigarh Golf Club">
+
+<title>Chandigarh Golf Club</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+	<link rel="stylesheet" href="https://booking.chandigarhgolfclub.in/templates/tools/bootstrap-4.0.0/css/bootstrap.min.css" type="text/css" /><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" /><link rel="stylesheet" href="https://booking.chandigarhgolfclub.in/templates/front/default/custom/css/style.css" type="text/css" /><link rel="stylesheet" href="https://booking.chandigarhgolfclub.in/templates/front/default/assest/custom.css" type="text/css" /><link rel="stylesheet" href="https://booking.chandigarhgolfclub.in/templates/tools/bootstrap/bootstrap-4-datetimepicker/build/css/tempusdominus-bootstrap-4.min.css" type="text/css" /><link rel="stylesheet" href="https://booking.chandigarhgolfclub.in/templates/tools/jquery/circle-timer/css/jquery.classycountdown.css" type="text/css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" type="text/css" /><link rel="stylesheet" href="https://booking.chandigarhgolfclub.in/includes/custom.css.php" type="text/css" /><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/jquery/validation/jquery.validate.min.js"></script>	</head>
+<body class="body">
+<a href="#" id="scroll" style="display: none;"><span></span></a>
+<header id="Header" class="text-center">
+ <div class="container">
+   <div class="TopDrop">
+		<div class="dropdown">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Tejinder Pal Singh</button>
+			<div class="dropdown-menu">
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking">MyAccount</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking">Member Booking</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingHistory">Cancel Booking</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=NoticeBoard">Notice Board</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Events">Events</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=ChangeProfile">Change Profile</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=ChangePassword">Change Password</a>
+			<a class="dropdown-item" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=NewMember&action=Logout">Logout</a>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+  </div>
+</header>
+<div class="container">
+	<div class="row mt-4 text-center">
+		
+		<div class="col-sm-2"><a class="nav-top-item btn btn-block btn-success" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking">Member Booking</a></div>
+		<div class="col-sm-2"><a class="nav-top-item btn btn-block btn-success" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingHistory">Cancel Booking</a></div>
+		<div class="col-sm-2"><a class="nav-top-item btn btn-block btn-success" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=NoticeBoard">Notice Board</a></div>
+		<div class="col-sm-2"><a class="nav-top-item btn btn-block btn-success" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Events">Events</a></div>
+		<div class="col-sm-2"><a class="nav-top-item btn btn-block btn-success" href="https://members.chandigarhgolfclub.in/login.html" target="_blank">Account Details</a></div>
+		<div class="col-sm-2"><a class="nav-top-item btn btn-block btn-success" href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=NewMember&action=Logout">Logout</a></div>
+	
+	</div>	
+</div>
+	<section class="Content">
+				<section class="CMS">
+		<div class="container my-5">
+			<h1 class="cms-title text-center"></h1>
+			<section class="CMS Login">
+<div class="container">
+<h1 class="text-center" id="TopAnc">Book your Tee Time</h1>
+  <div class="member-booking">
+	<!-- Member Booking Start-->
+	
+	<div class="row">
+	  <div class="col-sm-3"><span class="clock time">Time: </span><span class="clock sk_time">00:00:00</span></div>
+	  <div class="col-sm-9 text-right">
+			<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&tee=1&stdt=2021-12-28" class="sk_modal btn btn-dark btn-sm mb-2 mb-md-0" data-type="ajax" data-title="Tee 1 Booking">Tee 1 Booking Status</a>
+			<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&tee=10&stdt=2021-12-28" class="sk_modal btn btn-dark btn-sm mb-2 mb-md-0" data-type="ajax" data-title="Tee 10 Booking">Tee 10 Booking  Status</a>
+			
+			<!--<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&tee=1&stdt=2021-12-27" class="sk_modal btn btn-dark btn-sm mb-2 mb-md-0" data-type="ajax" data-title="Today's Tee 1 Booking">Today's Tee 1 Booking</a>
+			<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&tee=10&stdt=2021-12-27" class="sk_modal btn btn-dark btn-sm mb-2 mb-md-0" data-type="ajax" data-title="Today's Tee 10 Booking">Today's Tee 10 Booking</a>
+			<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&tee=1&stdt=2021-12-28" class="sk_modal btn btn-dark btn-sm mb-2 mb-md-0" data-type="ajax" data-title="Next Day Tee 1 Booking">Next Day Tee 1 Booking</a>
+			<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&tee=10&stdt=2021-12-28" class="sk_modal btn btn-dark btn-sm mb-2 mb-md-0" data-type="ajax" data-title="Next Day Tee 10 Booking">Next Day Tee 10 Booking</a>-->
+		</div>	
+	</div>
+	
+	<hr>
+	<form id="frmBookingFilter" method="GET" class="form-horizontal form-label-left" action="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking">
+	<input type="hidden" name="m" value="account">
+	<input type="hidden" name="v" value="Booking">
+	<div class="row">
+							<div class="col-sm-3">
+				<a  href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=M&stdt=2021-12-27" class="mb-2 btn btn-sm btn-light">Mon 27 Dec Morning</a>
+				<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-27" class="mb-2 btn btn-sm btn-light">Mon 27 Dec Afternoon</a>
+			</div>
+							<div class="col-sm-3">
+				<a  href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=M&stdt=2021-12-28" class="mb-2 btn btn-sm btn-light">Tue 28 Dec Morning</a>
+				<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-28" class="mb-2 btn btn-sm btn-primary">Tue 28 Dec Afternoon</a>
+			</div>
+							<div class="col-sm-3">
+				<a  href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=M&stdt=2021-12-29" class="mb-2 btn btn-sm btn-light">Wed 29 Dec Morning</a>
+				<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-29" class="mb-2 btn btn-sm btn-light">Wed 29 Dec Afternoon</a>
+			</div>
+							<div class="col-sm-3">
+				<a  href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=M&stdt=2021-12-30" class="mb-2 btn btn-sm btn-light">Thu 30 Dec Morning</a>
+				<a href="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-30" class="mb-2 btn btn-sm btn-light">Thu 30 Dec Afternoon</a>
+			</div>
+					</div>
+	</form>
+	<hr>
+	
+	  	 		 			<div class="row booking-row">
+			
+		 		 				<div class="col-sm-3">
+					<h6>Afternoon Tee 1 Slots</h6>
+					<small>28 Dec, 2021 - Tee 1</small>
+					<div style="height:300px;overflow:scroll;">
+					<ul class="booking-check-list">
+															<li rel="203965" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(2979) ASHWINDER SINGH</li>
+					<li>(1384) UTTAM SINGH MUNDY</li>
+					<li>(2962) MPS MANN 2962</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203965">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">12:00 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203966" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(933) BHUPINDER SINGH SANDHU</li>
+					<li>(820) CAPT. RS DHALIWAL</li>
+					<li>(805) BIKRAMJIT SINGH</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203966">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">12:15 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203967" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(069) Brig H S Batth</li>
+					<li>(1808) AMANDEEP SINGH BATH</li>
+					<li>(901) JASJIT SINGH</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203967">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">12:30 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203968" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(339) VIRENDRA SHARMA</li>
+					<li>(2445) BASANT SINGH THAKUR</li>
+					<li>(1512) BRIG.SURINDER SINGH</li>
+					<li>(1973) TARLOK SINGH MANDAIR</li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203968">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">12:45 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203969" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(045) COL G S GILL</li>
+					<li>(1325) SANDEEP GILL</li>
+					<li>(7171) ANJALI GILL</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203969">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">01:00 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203970" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(MM36) BRIG KISHORE MALHOTRA</li>
+					<li>(3237) COL NAVNEET PAL SINGH</li>
+					<li>(2963) COL NIRPINDER SINGH BAINS</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203970">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">01:15 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203971" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(2939) B. CHANDRA SEKHAR IPS</li>
+					<li>(s7444) RAO BRINDER SINGH</li>
+					<li>(6610) AMARINDER S CHEEMA(6610)</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203971">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">01:30 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203972" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(6644) GURWINDER SINGH KOHLI</li>
+					<li>(6638) DAMANJIT SINGH</li>
+					<li>(1778) R.K.S. KHARBANDA</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203972">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">01:45 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203973" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(2968) SANDEEP SINGH DHANOA</li>
+					<li>(899) 899 JAGIR SINGH JOSAN</li>
+					<li>(1829) Amardeep Singh Sidhu</li>
+					<li>(7623) KARANVIR SINGH RAI</li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203973">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">02:00 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203974" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(1126) RAJIV ATMA RAM</li>
+					<li>(907) TEJ PARTAP SINGH</li>
+					<li>(2557) MAJ ANIL AHUJA</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203974">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">02:15 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203975" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(2744) ANSHUMAN JAIN</li>
+					<li>(2982) harbinder singh</li>
+					<li>(384) DR. PS EGAN</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203975">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">02:30 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203976" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(2160) SARWAN SINGH BAINS</li>
+					<li>(2112) ER.J.C. GILHOTRA</li>
+					<li>(1920) ASHOK KUMAR GUPTA IAS</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203976">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">02:45 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203977" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(2304) SARAL GILL</li>
+					<li>(8334) SAHIR GILL</li>
+					<li>(8027) HARJORAWAR SINGH GILL</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203977">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">03:00 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203978" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(s3234) MRS HARDEEP K DHANOA</li>
+					<li>(s3238) MRS SONIA AULAKH</li>
+					<li>(s3203) MRS HARJEET GHUMAN</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203978">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">03:15 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203979" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(1151) PRADEEP KUMAR NANDA</li>
+					<li>(2115) SUKHDEV SINGH DHALIWAL</li>
+					<li>(1594) K.K KUKAR</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203979">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">03:30 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203980" class="li_slot li_not_available Closed">
+					<textarea class="TxBookingDetail d-none">
+							 <p>List of Players</p>
+				<ol>
+					<li>(3226) JUSTICE KULDIP SINGH</li>
+					<li>(2375) S.S. SODHI</li>
+					<li>(7175) RAJVINDER SINGH BAINS</li>
+					<li></li>
+				</ol>					</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203980">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">03:45 PM</span>
+							<span class="status"><span class="label label-danger">Closed</span></span>
+						</label>
+					</li>	
+															<li rel="203981" class="li_slot li_available Open">
+					<textarea class="TxBookingDetail d-none">
+												</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203981">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">04:00 PM</span>
+							<span class="status"><span class="label label-success">Open</span></span>
+						</label>
+					</li>	
+															<li rel="203982" class="li_slot li_available Open">
+					<textarea class="TxBookingDetail d-none">
+												</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203982">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">04:15 PM</span>
+							<span class="status"><span class="label label-success">Open</span></span>
+						</label>
+					</li>	
+															<li rel="203983" class="li_slot li_available Open">
+					<textarea class="TxBookingDetail d-none">
+												</textarea>
+						<label>
+							<span class="checkmarkWrap">
+								<input type="checkbox" class="ChkItem d-none" name="SlotCheck" value="203983">
+								<span class="checkmark"></span>
+							</span>
+							<span class="date">04:30 PM</span>
+							<span class="status"><span class="label label-success">Open</span></span>
+						</label>
+					</li>	
+										 </ul>
+					 </div>
+				 </div>
+								
+						
+				<div  class="col-sm-6">
+								<h6>&nbsp;</h6>
+				<small>&nbsp;</small>
+				 
+ 
+	
+				<form method="POST" action="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&timeterm=A&stdt=2021-12-28&action=FinalBooking" onsubmit="return CheckBookingForm();" >
+				<input type="hidden" name="SlotID" id="SlotID" value="0">
+				<input type="hidden" name="CounterID" id="CounterID" value="">
+				<!--  status start -->
+					<div id="DivAlertMessage" class="BookingStep" style="display:none;"></div>
+					<div id="DivBookingOpen" class="BookingStep text-center pt-5" style="display:block;">Booking Open Now</div>
+					<div id="DivExistingBooking" class="BookingStep text-center pt-5" style="display:none;">
+						<p>This slot is already booked.</p>
+						<a href="javascript:;" class="btn btn-default mt-4" id="AncExistingBooking">View Details</a>
+					</div>
+					<div id="DivBookingDetail" class="BookingStep" style="display:none;"></div>
+					<div id="DivStartBooking" class="BookingStep text-center pt-5" style="display:none;">
+					<p>In order to book this slot, please press the button below. This will lock this slot for your booking to complete for the next 2 minutes.</p>	
+					<a href="javascript:;" class="btn btn-default mt-4" id="AncStartBooking">Start Booking Session</a>
+					
+					</div>
+					<div id="DivCreateBooking" class="BookingStep" style="display:none;">	
+						<h6>Create Booking</h6>
+						<div class="float-right"><a href="javascript:;" class="btn btn-danger mt-4" id="AncCancelBooking">Cancel</a></div>
+						<p class="t15">This slot is locked for your booking for the next 2 mins. You can complete the transaction in this time.</p>
+							<div class="row">
+								<div class="col-sm-12 text-right">
+										<div class="countdownwrap"></div>
+								</div>
+								<div class="col-sm-12">
+									<div class="booking-table-wrap">
+									<table  class="create-booking-table table table-striped jambo_table">
+										<thead>
+										<tr>
+										  <th style="width:30px"></th>
+										  <th>Member</th>
+										  										  
+										</tr>
+									  </thead>
+									   <tfoot>
+										<tr>
+										  <td colspan="2" align="left"><button type="submit" class="btn btn-default btn-sm"> Book Now</button></td>
+										  										  
+										</tr>
+									  </tfoot>
+									  <tbody>
+									  <tr class="tr_Member">
+										<td align="center">1</td>
+										<td align="left">Tejinder Pal Singh</td>
+																				  
+									</tr>	
+																		<tr class="tr_Member">
+										<td align="center">2</td>
+										<td align="left">
+											<div class="select2wrap">
+												 <select id="UserID_2" name="UserID[2]" data-placeholder="Search Existing Member" class="select2-select" data-json="https://booking.chandigarhgolfclub.in/my-account.html?action=Jsonlist" data-selected="" >
+												 <option></option>
+												 </select>
+											</div>
+										</td>
+																				
+									</tr>	
+																		<tr class="tr_Member">
+										<td align="center">3</td>
+										<td align="left">
+											<div class="select2wrap">
+												 <select id="UserID_3" name="UserID[3]" data-placeholder="Search Existing Member" class="select2-select" data-json="https://booking.chandigarhgolfclub.in/my-account.html?action=Jsonlist" data-selected="" >
+												 <option></option>
+												 </select>
+											</div>
+										</td>
+																				
+									</tr>	
+																		<tr class="tr_Member">
+										<td align="center">4</td>
+										<td align="left">
+											<div class="select2wrap">
+												 <select id="UserID_4" name="UserID[4]" data-placeholder="Search Existing Member" class="select2-select" data-json="https://booking.chandigarhgolfclub.in/my-account.html?action=Jsonlist" data-selected="" >
+												 <option></option>
+												 </select>
+											</div>
+										</td>
+																				
+									</tr>	
+																		 </tbody>
+									</table>
+									</div>
+									</div>
+								
+							</div>
+						</div>
+						
+						<!-- status end -->
+					</form>	
+									</div>
+			
+				
+		 									<div class="col-sm-3 text-center"><strong>No slots available.</strong> </div>
+									
+				
+				
+			 </div>
+	 		  
+	
+	
+	<!-- Member Booking End-->
+  </div>
+</div>
+</section>
+<script type="text/javascript">
+	var handle = null;		
+    jQuery(document).ready(function($) {
+		
+		$('#datetimepicker1').datetimepicker({
+            format: 'YYYY-MM-DD'
+		 });
+		
+					$("#datetimepicker4").on("change.datetimepicker", function (e) {
+				jQuery('#frmBookingFilter').submit();
+			});
+			jQuery('#timeterm').bind("change",function(){
+				jQuery('#frmBookingFilter').submit();
+			});
+				
+		 
+		jQuery('#tee').bind("change",function(){
+			jQuery('#frmBookingFilter').submit();
+		});
+		
+		jQuery('.li_slot').bind("click",function(evt){
+			evt.stopPropagation();
+			evt.preventDefault();
+			$(".alert").hide();
+			$(".BookingStep").hide();
+			$(".ChkItem").prop('checked',false);
+			$(".li_slot").removeClass('active').removeClass('current');
+			$(this).addClass('current');	
+			if($(this).hasClass("li_available")){
+				$(this).find(".ChkItem").prop('checked',true);
+				$(this).addClass('active');
+				$("#SlotID").val($(this).attr('rel'));
+				//$("#DivStartBooking").show();
+				//alert('sss')
+				BookingSessionStart();
+				//setTimeout(BookingSessionStart, 200);
+			}
+			else{
+				$("#DivExistingBooking").show();
+			}
+		});
+		
+		jQuery('#AncCancelBooking').bind("click",function(){
+			url ="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&action=CancelFreezeSlot&SlotID=" + $("#SlotID").val() + "&n="+Math.random();
+			//alert(url);
+			var jqxhr = $.ajax({
+				dataType: "json",
+				url: url
+			}).done(function(result) {
+				if(result.status==true){
+					BookingCounterStop($("#CounterID").val());
+					$("#DivBookingOpen").show();				
+					elm = jQuery("li[rel="+$("#SlotID").val()+"]");
+					elm.removeClass("UnderProcess").addClass("Open");
+					elm.find(".status").html("Open");
+				}			
+			}).fail(function() {
+				alert( "An error occured please try again later" );
+			}).always(function() {
+				//alert( "complete" );
+			});
+			// ajax call end
+		});
+		
+		jQuery('#AncExistingBooking').bind("click",function(){
+			$(".BookingStep").hide();
+			var bk_content = jQuery('.li_slot.current').find(".TxBookingDetail").val();
+			$("#DivBookingDetail").html(bk_content).show();
+		});
+		
+		jQuery('.IsGuest').bind("click",function(){
+			if($(this).prop('checked')==true){
+				$(this).closest("tr").find(".PlayerName").prop('disabled',false);
+			 }
+			 else{
+				 $(this).closest("tr").find(".PlayerName").prop('disabled',true);
+			 }
+			
+		});
+	});
+	
+	function BookingSessionStart() {
+		url ="https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&action=CheckAndFreezeSlot&SlotID=" + $("#SlotID").val() + "&n="+Math.random();
+		if(typeof(booking_ajax) != 'undefined' && booking_ajax == "busy"){
+			return false;			
+		}
+					
+		var jqxhr = $.ajax({
+			dataType: "json",
+			async : true,
+			url: url,
+			beforeSend:function(xhr){
+				booking_ajax = "busy";
+			}
+		}).done(function(result) {
+			booking_ajax="free";
+			if(result.status==true){
+				//console.log("done URL" + url); 
+				$(".BookingStep").hide();
+				$("#DivAlertMessage").hide();
+				$("#DivCreateBooking").show();						
+				BookingCounterStart();	
+			}
+			else if(result.status==false){
+				$("#DivAlertMessage").html("<span>"+result.msg+"</span>").show();
+			}
+		}).fail(function() {
+		   booking_ajax="free";
+			alert( "An error occured please try again later" );
+		}).always(function() {
+			//alert( "complete" );
+			console.log("always URL" + url); 
+		});
+		// ajax call end
+	}
+	
+	function CheckBookingForm() {
+		var PlayerCount = 1;
+		var player_array = [];
+		player_array.push('fdf1bc5669e8ff5ba45d02fded729feb');
+				if(jQuery("#UserID_2").val() != "" && jQuery("#UserID_2").val() != null)
+			player_array.push(jQuery("#UserID_2").val());
+		else if(jQuery("#IsGuest_2").prop('checked') == true && jQuery("#PlayerName_2").val() != "")
+			player_array.push(jQuery("#PlayerName_2").val());
+				if(jQuery("#UserID_3").val() != "" && jQuery("#UserID_3").val() != null)
+			player_array.push(jQuery("#UserID_3").val());
+		else if(jQuery("#IsGuest_3").prop('checked') == true && jQuery("#PlayerName_3").val() != "")
+			player_array.push(jQuery("#PlayerName_3").val());
+				if(jQuery("#UserID_4").val() != "" && jQuery("#UserID_4").val() != null)
+			player_array.push(jQuery("#UserID_4").val());
+		else if(jQuery("#IsGuest_4").prop('checked') == true && jQuery("#PlayerName_4").val() != "")
+			player_array.push(jQuery("#PlayerName_4").val());
+				
+		var uniqueNames = [];
+		$.each(player_array, function(i, el){
+			if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+		});			
+		
+		if(uniqueNames.length != player_array.length){
+			alert("Duplicate entry not allowed.");
+			return false
+		}
+		if(uniqueNames.length <3){
+			alert("Please select atleast 2 more players for this booking.");
+			return false
+		}		
+		return true;
+	}
+	
+	function SelectedBookingData() {
+		source = "https://booking.chandigarhgolfclub.in/index.php?m=account&v=BookingData&ajax=1&tee="+jQuery("#tee").val()+"&stdt="+jQuery("#stdt").val();
+		title = "Booking's for selected date - Tee Hole No: "+jQuery("#tee").val()+" Date: "+jQuery("#stdt").val()+"";
+		ShowModalView(source, title, 'ajax', '');
+	}
+	
+	function BookingCounterStop(SID) {
+		console.log(SID);
+		if($('#counter_'+SID).length > 0){
+			console.log("Time out!");
+			$(".BookingStep").hide();
+			jQuery(".booking-check-list").removeClass('DisableList');
+		}
+	}
+	
+	function BookingCounterStart() {
+		var sk_unique = new Date().valueOf();
+		jQuery(".ClassyCountdownDemo").remove();
+		jQuery(".booking-check-list").addClass('DisableList');
+		$("#CounterID").val(sk_unique);
+		
+		jQuery('<div/>', {
+			id: 'counter_'+sk_unique,
+			class: 'ClassyCountdownDemo',
+			title: 'now this div has a title!'
+		}).appendTo('.countdownwrap');   
+		
+		$('#counter_'+sk_unique).ClassyCountdown({
+			end: $.now() + 120,
+			labels: true,
+			style: {
+				minutes: {
+					gauge: {
+						thickness: .3,
+						bgColor: "rgba(0,0,0,0.06)",
+						fgColor: "#368800"
+					},
+					textCSS: 'font-family:\'Open Sans\'; font-size:20px; font-weight:600;'
+				},
+				seconds: {
+					gauge: {
+						thickness: .3,
+						bgColor: "rgba(0,0,0,0.06)",
+						fgColor: "#c70000"
+					},
+					textCSS: 'font-family:\'Open Sans\'; font-size:20px; font-weight:600;'
+				}
+
+			},
+			onEndCallback: function() {
+				BookingCounterStop(sk_unique);
+			}
+		});
+	}
+	
+	function GetRuntimeStatus(n) {
+		if(n >= 0){
+			if(handle) clearTimeout(handle);
+			SlotStatusUpdateAll();
+			handle=null;
+			return;
+		}
+		handle = setTimeout(SlotStatusUpdateAll, 15000);
+	}
+	
+	
+	function SlotStatusUpdateAll() {
+		SlotIDs = "";
+		jQuery(".li_available").each(function(){
+			SlotIDs = SlotIDs + $(this).attr("rel") + ",";
+		});
+		
+		if(SlotIDs != ""){
+			// ajax call start
+			var jqxhr22 = $.ajax({
+			  dataType: "json",
+			  async : true,
+			  url: "https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&action=RecheckSlotAll&SlotIDs=" + SlotIDs + "&n="+Math.random(),
+			  beforeSend:function(xhr){
+				
+			  }
+			}).done(function(resultAll) {
+				$.each( resultAll, function( SID, result22 ) {
+					  if(jQuery("li[rel="+SID+"]").length > 0){
+						 elm = jQuery("li[rel="+SID+"]");
+						 if(result22.Status=="Open"){
+								elm.removeClass("UnderProcess").addClass("Open");
+								elm.find(".status").html(result22.StatusHTML);
+							}
+							else if(result22.Status=="UnderProcess"){
+								elm.removeClass("Open").addClass("UnderProcess");
+								elm.find(".status").html(result22.StatusHTML);
+							}
+							else if(result22.Status=="Closed"){
+								 elm.removeClass("Open UnderProcess li_available").addClass("li_not_available Closed");
+								 elm.find(".status").html(result22.StatusHTML);
+								 elm.find(".TxBookingDetail").html(result22.PlayerHTML);
+							}
+						 
+					  }
+					});
+					GetRuntimeStatus(-1);
+			}).fail(function() {
+					GetRuntimeStatus(-1);
+			}).always(function() {
+				
+			});
+			// ajax call end
+		}		
+	}
+	
+	function SlotStatusUpdate(elmindex) {
+		elm = jQuery(".li_available").eq(elmindex);
+		if(elm.hasClass("active")){
+			setTimeout(function(){ GetRuntimeStatus(elmindex+1); }, 5000);
+			return true;
+		}
+		// ajax call start
+		var jqxhr22 = $.ajax({
+			dataType: "json",
+			async : true,
+			url: "https://booking.chandigarhgolfclub.in/index.php?m=account&v=Booking&action=RecheckSlot&SlotID=" + elm.attr("rel") + "&n="+Math.random(),
+			beforeSend:function(xhr){}
+		}).done(function(result22) {
+			if(result22.Status=="Open"){
+				elm.removeClass("UnderProcess").addClass("Open");
+				elm.find(".status").html(result22.StatusHTML);
+			}
+			else if(result22.Status=="UnderProcess"){
+				elm.removeClass("Open").addClass("UnderProcess");
+				elm.find(".status").html(result22.StatusHTML);
+			}
+			else if(result22.Status=="Closed"){
+				elm.removeClass("Open UnderProcess li_available").addClass("li_not_available Closed");
+				elm.find(".status").html(result22.StatusHTML);
+				elm.find(".TxBookingDetail").html(result22.PlayerHTML);
+			}					
+		}).fail(function() {
+
+		}).always(function() {
+			setTimeout(function(){ GetRuntimeStatus(elmindex+1); }, 5000);
+		});
+		// ajax call end	
+	}
+</script>
+		</div>
+		</section>
+	</section>
+<!-- Footer -->
+
+<div class="FooterLink py-4 text-uppercase">
+  <div class="container">
+    <div class="row gutter-lg">
+      <div class="col-md-6">
+        <h4>About CGC</h4>
+        <ul class="list-unstyled mr-md-5 mr-sm-5 pr-lg-5 float-left">
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/heritage/">Heritage</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/presidents/">Presidents</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/vice-presidents/">Vice Presidents</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/captains/">Captains</a></li>
+        </ul>
+        <ul class="list-unstyled">
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/hony-secretaries/">Hony Secretaries</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/hony-treasurers/">Hony Treasurers</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/managing-committee/">Managing Committee</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/about-cgc/club-champions/">Club Champions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Club</h4>
+        <ul class="list-unstyled mr-md-5 pr-xl-5 mr-sm-5 float-left">
+          <li><a href="https://www.chandigarhgolfclub.in/flora-and-fauna/">Flora & Fauna</a></li>
+		<li><a href="https://www.chandigarhgolfclub.in/course/golf-course/">Golf Course</a></li>
+			<li><a href="https://www.chandigarhgolfclub.in/restaurants/">Dining</a></li>
+            <li><a href="https://www.chandigarhgolfclub.in/club/health-club/">Health Club</a></li>
+          
+        </ul>
+        <ul class="list-unstyled mr-md-5 pr-xl-5 mr-sm-5 float-left">
+          
+          <li><a href="https://www.chandigarhgolfclub.in/club/pool/">Pool</a></li>
+			<li><a href="https://www.chandigarhgolfclub.in/club/pro-shop/">Pro Shop</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/club/dress-code/">Dress Code</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/course/green-fee-rates/">Green Fee Rates</a></li>
+        </ul>
+        <ul class="list-unstyled">
+          <li><a href="https://www.chandigarhgolfclub.in/course/caddy-rates/">Caddy Rates</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/club/reciprocals/">Reciprocals</a></li>
+          <li><a href="https://www.chandigarhgolfclub.in/contact-us/">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="Footer text-center text-uppercase text-white">
+  <div class="container"> Resources, &copy; 2011-2019, Chandigarh Golf Club. All Rights Reserved. </div>
+</section> 
+<script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/others/popper.min.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/bootstrap-4.0.0/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js" ></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/bootstrap/bootstrap-4-datetimepicker/build/js/tempusdominus-bootstrap-4.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/front/default/custom/js/jquery.cycle2.min.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/front/default/custom/js/script.js"></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js" ></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/header.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/NumberFormat.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/bootstrap/js/bootstrap-dialog.min.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/scrollbar/dist/perfect-scrollbar.min.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/jquery/circle-timer/js/jquery.knob.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/jquery/circle-timer/js/jquery.throttle.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/jquery/circle-timer/js/jquery.classycountdown.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/tools/custom.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/templates/front/default/assest/extras.js"></script><script type="text/javascript" src="https://booking.chandigarhgolfclub.in/includes/footer.js.php"></script></body>
+</html><!--Time: 0.116 sec--><!--Memory(P): 4096 KB--><!--Memory: 4096 KB--><!--Conn: 1 --><!--CURRENT TIME: 2021-12-27 15:51:34 -->
